@@ -23,10 +23,15 @@
 
 2. Write a sentence in plain English describing how `square(square(15))` is
    evaluated.
+   
+    -it starts with what's inside the parentheses of the function (square(15)) which is 225 then 
+   square(225).
 
 3. Rename `square`'s `num` parameter in your above code to `monkey`, and
    rename the uses of that parameter in the body to `monkey` as well. Will the
    function `square` still work? Why or why not?
+   
+   - Sure it will work, cause it's just a parameter name.
 
 4. What is wrong with the following definitions of `square`? Write a sentence or
    two describing the issue(s); then, try copying the erroneous examples into a
@@ -48,29 +53,36 @@
    }
    ```
 
+   -- the issue is the parameter name it has to be declared as it is not as a string like the 3rd exemple, 
+   nor as a number like the 2nd and has to be used in the return statament (1st exemple : return monkey*monkey).
+
 5. Fix the invalid syntax in the following functions (you can copy and paste these
    invalid definitions into your console and then edit them there):
 
    ```js
-   func square1(x {
+   function square1(x) {
      return x * x;
    }
 
-   functionsquare2 x)
+   function square2 (x) {
      return x * x;
    }
 
-   function (x) square3 {
+   function square (x) {
      return x * x;
+   }
    ```
 
 6. The following functions exhibit poor style -- fix these issues using the
    original version of `square` as a reference.
 
    ```js
-   function square(x){return x*x;}
+   function square(x) {
+    return x*x;
+    }
 
-   function square (x) { return x *x;
+   function square (x) {
+     return x*x;
    }
 
    function square(x)
@@ -83,7 +95,7 @@
 
   ```js
   function cube(x) {
-    // your code here
+    return x*x*x;
   }
   ```
 
@@ -92,18 +104,29 @@
    together with a space in between.
 
   ```js
-  // don't forget the parameters!
-  function fullName() {
-    // your code here
+  
+  function fullName(firstName, lastName) {
+    return firstName +" "+lastName;
+    
   }
   fullName("John", "Doe") // => "John Doe"
   ```
 
 9. Write a function `average` that takes two numbers as input (parameters), and
    returns the average of those numbers.
+   ```js
+   function average(x,y) {
+    return (x+y)/2;
+   }
+   ````
 
 10. Write a function `greeter` that takes a name as an argument and *greets*
     that name by returning something along the lines of `"Hello, <name>!"`
+    ```js
+    var greeter = (name) => {
+    return "hello" + " " + name + "!";
+}
+``
 
 11. Using the document found at <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">this link</a>, translate the first page of geometric
     formulas into JavaScript functions.
@@ -116,6 +139,82 @@
       return 2 * (l + w);
     }
     ```
+    ```js
+    function square(x) {
+      return x*x
+    }
+    ```
+    ```js
+    function rectangle (l,w) {
+      return l*w;
+    }
+    ```
+    ```js
+    function parallelogram (l,h) {
+      return l*h;
+    }
+    ```
+    ```js
+    function trapezoid (h,b1,b2) {
+      return 1/2*h*(b1+b2)
+
+    }
+    ```
+    ```js 
+    function triangle (b,h) {
+      return 1/2*b*
+    }
+    ```
+    ```js
+    function circle(r) {
+      var Pi = Math.PI;
+      return Pi*(r*r)
+
+    }
+    ```
+    ```js
+    function rectangularSolid (l,w,h) {
+      return l*w*h
+    }
+    ```
+    ```js 
+    function cube (s) {
+      return s*s*s;
+    }
+    ```
+    ```js
+    function rightCircularCylinder(r,h) {
+      var Pi = Math.PI;
+      var x = r*r
+      return Pi*x*h
+    }
+    ```
+    ```js
+    function Sphere(r) {
+      var Pi = Math.PI; 
+      var y = r*r*r
+      return 4/3*Pi*y
+    }
+    ```
+    ```js
+    function rightCircularCone(r,h) {
+      var Pi = Math.PI; 
+      var x = r*r
+      return 1/3*Pi*x*h
+    }
+    ```
+    ```js
+    function squareOrRectangularPyramid (l,w,h){
+    return 1/3*l*w*h;
+    }
+    ```
+    ```js
+    function frustumOfRightCircularCone (r,R,h) {
+      var Pi = Math.PI;
+      var x = r*r;
+      var y = R*R;
+      return (Pi*(x+r*R+y)*h)/3;
+    }
 
     **NOTE:** JavaScript provides some nifty mathematical functions and
     constants built into the language that you'll need for this exercise. The
